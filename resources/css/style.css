@@ -67,8 +67,6 @@ header button svg {
 
 /*List items*/
 .container {
-    display: flex;
-    justify-content: center;
     width: 100%;
     padding: 15px;
 }
@@ -127,7 +125,7 @@ ul.todo li .buttons button svg {
     height: 22px;
     width: 22px;
     position: absolute;
-    transform: translate(-50%, -50%)
+    transform: translate(-50%, -50%);
 }
 
 ul.todo li .buttons button.complete svg {
@@ -136,19 +134,58 @@ ul.todo li .buttons button.complete svg {
     transition: 0.3s ease;
 }
 
-ul.todo li .buttons button.complete:hover svg {
-    background: rgba(183, 188, 240, 0.8)
-}
-
-ul.todo li .buttons button.complete:focus svg .fill {
-    fill: #fff;
-}
-
-ul.todo li .buttons button.complete:focus svg {
+ul.todo#completed li .buttons button.complete svg {
     background: #0000b2;
 }
 
-ul.todo li .buttons button.remove:hover svg .fill {
-    fill: #e85656
+ul.todo#completed li .buttons button.complete svg .fill {
+    fill: #fff;
 }
+
+ul.todo:not(#completed) li .buttons button.complete:hover svg {
+    background: rgba(25, 25, 200, 0.9);
+}
+
+ul.todo:not(#completed) li .buttons button.complete:hover svg .fill {
+    fill: #fff;
+}
+
+ul.todo:not(#completed) li .buttons button.complete svg {
+    background: #fff;
+}
+
+ul.todo#completed li .buttons button.complete:hover svg .fill {
+    fill: #fff;
+}
+
+ul.todo li .buttons button svg .fill {
+    transition: fill 0.2s ease;
+}
+
+ul.todo li .buttons button.complete svg .fill {
+    fill: #0000b2;
+}
+
+ul.todo li .buttons button.remove:hover svg .fill {
+    fill: #e85656;
+}
+
+ul.todo#completed:not(:empty) {
+    position: relative;
+    padding: 60px 0 0 0;
+}
+
+ul.todo#completed:not(:empty):before {
+    content: '';
+    width: 150px;
+    height: 1px;
+    background: #acacac;
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    margin: 0 0 0 -75px;
+}
+
+
+
 
