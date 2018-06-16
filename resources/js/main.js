@@ -7,7 +7,14 @@ document.getElementById('addItem').addEventListener('click', function() {
     if (itemValue) {
         addItemTodo(itemValue);
     } else {
-        console.log('Nothing has been inputted');
+        alert('Please input a value into the field');
+    }
+});
+
+document.getElementById('item').addEventListener('keydown', function enter(event) {
+    if (event.keyCode === 13) {
+        addItemTodo(item.value); 
+        item.value = '';
     }
 });
 
