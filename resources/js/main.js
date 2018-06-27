@@ -6,6 +6,7 @@ document.getElementById('addItem').addEventListener('click', function() {
     let itemValue = document.getElementById('item').value;
     if (itemValue) {
         addItemTodo(itemValue);
+        item.value='';
     } else {
         alert('Please input a value into the field');
     }
