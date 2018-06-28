@@ -13,11 +13,12 @@ document.getElementById('addItem').addEventListener('click', function() {
 });
 
 //User touch of add button
-document.getElementById('addItem').addEventListener('touchstart', function() {
+document.getElementById('addItem').addEventListener('touchstart', function(event) {
     let itemValue = document.getElementById('item').value;
     if (itemValue) {
         addItemTodo(itemValue);
         item.value='';
+        event.preventDefault();
     } else {
         alert('Please input a value into the field');
     }
