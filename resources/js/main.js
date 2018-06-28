@@ -12,6 +12,17 @@ document.getElementById('addItem').addEventListener('click', function() {
     }
 });
 
+//User touch of add button
+document.getElementById('addItem').addEventListener('touchstart', function() {
+    let itemValue = document.getElementById('item').value;
+    if (itemValue) {
+        addItemTodo(itemValue);
+        item.value='';
+    } else {
+        alert('Please input a value into the field');
+    }
+});
+
 document.getElementById('item').addEventListener('keydown', function enter(event) {
     if (event.keyCode === 13) {
         addItemTodo(item.value); 
